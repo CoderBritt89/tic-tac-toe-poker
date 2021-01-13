@@ -1,6 +1,5 @@
 let board = [];
 
-
 const play =(clickedId)=>{
 
 const playerSpan = document.getElementById('player'); 
@@ -19,9 +18,6 @@ if(playerSpan.innerText === 'X'){
     board[clickedId] = '0';
 }
 
-console.log(board);
-
-}
 
 const topLeft = board[0];
 const topCenter = board[1];
@@ -38,12 +34,15 @@ const bottomRight = board[8];
 if(topLeft !== undefined && topLeft === topCenter && topLeft === topRight){
     alert(`${topLeft} is the winner`);
     return;
+ 
 } if(middleLeft!== undefined && middleLeft === middleCenter && middleLeft === middleRight){
     alert(`${middleLeft} is the winner`);
     return;
+
 } if (bottomLeft!== undefined && bottomLeft === bottomCenter && bottomLeft === bottomRight){
     alert(`${bottomLeft} is the winner`);
     return;
+
 } if(topLeft!== undefined && topLeft === middleLeft && topLeft === bottomLeft){
     alert(`${topLeft} is the winner`);
     return;
@@ -60,7 +59,31 @@ if(topLeft !== undefined && topLeft === topCenter && topLeft === topRight){
     alert(`${topRight} is the winner`);
     return;
 }
+//i<=8 is because there are 8 possible ways to win?
 
-for(i=0; i< board.length; i++)
-const boardFull = true;
-if ()
+let  boardFull = true;
+for(let i=0; i<= 8; i++){
+if (board[i] === undefined){
+    boardFull = false;
+}
+}
+
+if (boardFull === true){
+alert("Cat's game, there is no winner");
+reset();
+}
+}
+
+const button = document.createElement('button');
+
+const reset =()=> {
+
+    button.innerText = 'reset the game';
+    if (alert === 'true'){
+        return board = [];
+    }
+    }
+
+    reset();
+
+
